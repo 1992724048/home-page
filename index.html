@@ -185,6 +185,17 @@
     </div>
   </body>
   <script>
+    // 屏幕适配
+    $(function () {
+      if ($(window).width() < 400) {
+        $(".中间区域").width("300px");
+        $(".中间区域").css("margin", "10px");
+        $(".昵称_头像_简介").width("300px");
+        $(".社交列表 > ul > li").width("300px");
+      }
+    });
+  </script>
+  <script>
     // 点击特效
     var fontAll = ["喵~", "杂鱼❤️喵~"];
     var colorAll = [

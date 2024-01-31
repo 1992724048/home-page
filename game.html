@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>遂沫的小窝</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script src="./xs.js"></script>
+
+    <style>
+      @font-face {
+        font-family: StarRail;
+        src: url("./font/zh-cn.ttf");
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: StarRail;
+      }
+
+      body {
+        width: 1vw;
+        height: 1vh;
+        background: gainsboro;
+      }
+
+      hr {
+        height: 1px;
+        background-color: pink;
+        border: none;
+      }
+
+      .鼠标特效 {
+        position: absolute;
+        user-select: none;
+        font-size: 20px;
+      }
+
+      .中间区域 {
+        width: 400px;
+        height: 640px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff79;
+        padding: 15px;
+        box-shadow: rgba(112, 82, 82, 0.459) 15px 15px 5px 5px;
+      }
+
+      .中间区域_移动端 {
+        width: 1vw;
+        height: 1vh;
+        background-color: #ffe4e48c;
+        padding: 15px;
+      }
+
+      .昵称_头像_简介 {
+        width: auto;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        background-color: #ffffff2a;
+        padding: 10px;
+      }
+
+      .头像 {
+        width: 100px;
+        height: 100px;
+        border: pink solid 2px;
+        border-radius: 50%;
+        transition: all 500ms ease-in-out;
+      }
+
+      .昵称 {
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .简介 {
+        font-weight: bold;
+      }
+
+      .社交列表 {
+        margin-top: 15px;
+        width: 400px;
+      }
+
+      .社交列表 > ul > li {
+        list-style: none;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-color: #ffffff8a;
+      }
+
+      .社交列表 > ul > li:hover {
+        background-color: #ffffff !important;
+        transition: all 300ms ease-in-out !important;
+        box-shadow: rgba(175, 175, 175, 0.507) 3px 5px 5px 0px !important;
+      }
+
+      .社交列表 > ul > li > a {
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 40px;
+        line-height: 40px;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: flex-start;
+        color: black;
+        text-decoration: none;
+      }
+
+      .社交列表 > ul > li > a > i {
+        font-size: 25px;
+        vertical-align: middle;
+        line-height: 40px;
+        margin-right: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="中间区域">
+      <div class="社交列表">
+        <ul>
+          <li class="">
+            <a href="./index.html" target="_self">
+              <p>返回</p>
+            </a>
+          </li>
+          <hr />
+          <li class="xs_li_1">
+            <a href="./img/IMG_0768.PNG" target="_blank">
+              <p>明日方舟: 遂沫#3213 | 官服 | LV.81</p>
+            </a>
+          </li>
+          <li class="xs_li_2">
+            <a href="./img/Snipaste_2024-01-31_21-18-53.png" target="_blank">
+              <p>原神: UID:206266905 | 官服 | LV.58</p>
+            </a>
+          </li>
+          <li class="xs_li_3">
+            <a href="./img/Snipaste_2024-01-31_21-22-32.png" target="_blank">
+              <p>崩坏：星穹铁道: UID:107010264 | 官服 | LV.65</p>
+            </a>
+          </li>
+          <li class="xs_li_4">
+            <a href="#" target="_blank">
+              <p>碧蓝航线 (已退游)</p>
+            </a>
+          </li>
+          <li class="xs_li_5">
+            <a href="#" target="_blank">
+              <p>碧蓝档案 (已退游)</p>
+            </a>
+          </li>
+          <li class="xs_li_6">
+            <a href="#" target="_blank">
+              <p>赛马娘 (不常玩): B服</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script>
+    // 屏幕适配
+    $(function () {
+      if ($(window).width() < 450) {
+        $(".中间区域").addClass("中间区域_移动端").removeClass("中间区域");
+        $(".中间区域_移动端").css("width", $(window).width() - 30);
+        $(".中间区域_移动端").css("min-width", $(window).width() - 30);
+        $(".中间区域_移动端").css("max-width", $(window).width() - 30);
+        $(".中间区域_移动端").css("height", $(document).height());
+        $(".社交列表").css("width", $(window).width() - 30);
+        $(".社交列表").css("min-width", $(window).width() - 30);
+        $(".社交列表").css("max-width", $(window).width() - 30);
+      }
+
+      $(window).resize(function () {
+        if ($(window).width() < 450) {
+          $(".中间区域").addClass("中间区域_移动端").removeClass("中间区域");
+          $(".中间区域_移动端").css("width", $(window).width() - 30);
+          $(".中间区域_移动端").css("min-width", $(window).width() - 30);
+          $(".中间区域_移动端").css("max-width", $(window).width() - 30);
+          $(".中间区域_移动端").css("height", $(document).height());
+          $(".社交列表").css("width", $(window).width() - 30);
+          $(".社交列表").css("min-width", $(window).width() - 30);
+          $(".社交列表").css("max-width", $(window).width() - 30);
+        }
+      });
+    });
+  </script>
+  <script>
+    // 点击特效
+    var fontAll = ["喵~", "杂鱼~"];
+    var colorAll = [
+      "red",
+      "pink",
+      "yellow",
+      "blue",
+      "aqua",
+      "green",
+      "gold",
+      "brown",
+      "grey",
+      "orange"
+    ];
+
+    $(document).click(function (e) {
+      var $span = $(
+        "<span class='鼠标特效'>" +
+          fontAll[Math.floor(Math.random() * fontAll.length)] +
+          "</span>"
+      );
+      $("body").append($span);
+      $span.css("color", colorAll[Math.floor(Math.random() * colorAll.length)]);
+      var width = $span.width();
+      var height = $span.height();
+      var init = e.pageY - height / 2;
+      $span.css({
+        left: e.pageX - width / 2 + "px",
+        top: init + "px"
+      });
+      $span.animate(
+        {
+          fontsize: 10 + "px",
+          top: init - 150 + "px",
+          opacity: 0.2
+        },
+        1000,
+        function () {
+          $span.css("display", "none");
+        }
+      );
+    });
+  </script>
+  <script>
+    // 按钮特效
+    $(function () {
+      $(".xs_li_1").xs999(17);
+      $(".xs_li_2").xs999(18);
+      $(".xs_li_3").xs999(19);
+      $(".xs_li_4").xs999(20);
+      $(".xs_li_5").xs999(21);
+      $(".xs_li_6").xs999(22);
+      $(".xs_li_7").xs999(24);
+      $(".xs_li_8").xs999(25);
+      $(".xs_li_10").xs999(26);
+      $(".xs_li_11").xs999(27);
+    });
+  </script>
+</html>

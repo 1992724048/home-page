@@ -55,7 +55,7 @@
 
       .中间区域 {
         width: 400px;
-        height: 600px;
+        height: 640px;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -68,17 +68,18 @@
       .中间区域_移动端 {
         width: 1vw;
         height: 1vh;
-        background-color: #ffffff79;
+        background-color: #ffe4e48c;
         padding: 15px;
       }
 
       .昵称_头像_简介 {
-        display: inline-block;
         width: auto;
         height: 100px;
         display: flex;
         align-items: center;
         margin-bottom: 15px;
+        background-color: #ffffff2a;
+        padding: 10px;
       }
 
       .头像 {
@@ -107,12 +108,13 @@
         list-style: none;
         margin-top: 5px;
         margin-bottom: 5px;
-        background-color: #ffffff44;
+        background-color: #ffffff8a;
       }
 
       .社交列表 > ul > li:hover {
-        background-color: #ffffff;
-        transition: all 500ms ease-in-out;
+        background-color: #ffffff !important;
+        transition: all 300ms ease-in-out !important;
+        box-shadow: rgba(175, 175, 175, 0.507) 3px 5px 5px 0px !important;
       }
 
       .社交列表 > ul > li > a {
@@ -197,10 +199,28 @@
               <p>Mail</p>
             </a>
           </li>
+          <li class="xs_li_9">
+            <a href="./img/IMG_0767(20240131-202938).JPG">
+              <i class="fa-brands fa-qq"></i>
+              <p>QQ</p>
+            </a>
+          </li>
           <li class="xs_li_8">
             <a href="./img/IMG_0765(20240131-191808).JPG">
               <i class="fa-brands fa-weixin"></i>
               <p>WeChat</p>
+            </a>
+          </li>
+          <li class="xs_li_10">
+            <a href="./game.html" target="_self">
+              <i class="fa-solid fa-gamepad"></i>
+              <p>Game</p>
+            </a>
+          </li>
+          <li class="xs_li_11">
+            <a href="https://ys.mihoyo.com/pre-register/#/" target="_blank">
+              <i class="fa-solid fa-question"></i>
+              <p>? ? ?</p>
             </a>
           </li>
         </ul>
@@ -220,6 +240,19 @@
         $(".社交列表").css("min-width", $(window).width() - 30);
         $(".社交列表").css("max-width", $(window).width() - 30);
       }
+
+      $(window).resize(function () {
+        if ($(window).width() < 450) {
+          $(".中间区域").addClass("中间区域_移动端").removeClass("中间区域");
+          $(".中间区域_移动端").css("width", $(window).width() - 30);
+          $(".中间区域_移动端").css("min-width", $(window).width() - 30);
+          $(".中间区域_移动端").css("max-width", $(window).width() - 30);
+          $(".中间区域_移动端").css("height", $(document).height());
+          $(".社交列表").css("width", $(window).width() - 30);
+          $(".社交列表").css("min-width", $(window).width() - 30);
+          $(".社交列表").css("max-width", $(window).width() - 30);
+        }
+      });
     });
   </script>
   <script>
@@ -552,6 +585,8 @@
       $(".xs_li_6").xs999(6);
       $(".xs_li_7").xs999(7);
       $(".xs_li_8").xs999(9);
+      $(".xs_li_10").xs999(10);
+      $(".xs_li_11").xs999(15);
     });
   </script>
 </html>

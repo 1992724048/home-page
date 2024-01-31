@@ -39,10 +39,6 @@
         width: 1vw;
         height: 1vh;
         background: gainsboro;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
       }
 
       hr {
@@ -69,8 +65,16 @@
         box-shadow: rgba(112, 82, 82, 0.459) 15px 15px 5px 5px;
       }
 
+      .中间区域_移动端 {
+        width: 1vw;
+        height: 1vh;
+        background-color: #ffffff79;
+        padding: 15px;
+      }
+
       .昵称_头像_简介 {
-        width: 400px;
+        display: inline-block;
+        width: auto;
         height: 100px;
         display: flex;
         align-items: center;
@@ -143,7 +147,7 @@
           alt="github头像"
         />
         <div style="margin-left: 15px">
-          <p class="昵称">遂沫</p>
+          <p class="昵称">遂沫🏳️‍⚧️</p>
           <hr />
           <p class="简介">这里是遂沫的小窝</p>
         </div>
@@ -193,6 +197,12 @@
               <p>Mail</p>
             </a>
           </li>
+          <li class="xs_li_8">
+            <a href="./img/IMG_0765(20240131-191808).JPG">
+              <i class="fa-brands fa-weixin"></i>
+              <p>WeChat</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -200,30 +210,15 @@
   <script>
     // 屏幕适配
     $(function () {
-      if ($(window).width() < 400) {
-        $(".中间区域").width("300px");
-        $(".中间区域").height("500px");
-        $(".中间区域").css("margin", "10px");
-        $(".昵称_头像_简介").width("300px");
-        $(".社交列表 > ul > li").width("300px");
-      }
-    });
-
-    $(window).resize(function () {
-      if ($(window).width() < 400) {
-        $(".中间区域").width("300px");
-        $(".中间区域").height("500px");
-        $(".中间区域").css("margin", "10px");
-        $(".昵称_头像_简介").width("300px");
-        $(".社交列表 > ul > li").width("300px");
-      }
-
-      if ($(window).width() > 600) {
-        $(".中间区域").width("400px");
-        $(".中间区域").height("600px");
-        $(".中间区域").css("margin", "0px");
-        $(".昵称_头像_简介").width("400px");
-        $(".社交列表 > ul > li").width("400px");
+      if ($(window).width() < 450) {
+        $(".中间区域").addClass("中间区域_移动端").removeClass("中间区域");
+        $(".中间区域_移动端").css("width", $(window).width() - 30);
+        $(".中间区域_移动端").css("min-width", $(window).width() - 30);
+        $(".中间区域_移动端").css("max-width", $(window).width() - 30);
+        $(".中间区域_移动端").css("height", $(document).height());
+        $(".社交列表").css("width", $(window).width() - 30);
+        $(".社交列表").css("min-width", $(window).width() - 30);
+        $(".社交列表").css("max-width", $(window).width() - 30);
       }
     });
   </script>
@@ -420,7 +415,7 @@
           {
             x: randomFnx,
             y: randomFny,
-            r: randomFnR,
+            r: randomFnR
           },
           i
         );
@@ -473,7 +468,7 @@
   </script>
   <script>
     // 点击特效
-    var fontAll = ["喵~", "杂鱼❤️喵~"];
+    var fontAll = ["喵~", "杂鱼~"];
     var colorAll = [
       "red",
       "pink",
@@ -484,7 +479,7 @@
       "gold",
       "brown",
       "grey",
-      "orange",
+      "orange"
     ];
 
     $(document).click(function (e) {
@@ -500,13 +495,13 @@
       var init = e.pageY - height / 2;
       $span.css({
         left: e.pageX - width / 2 + "px",
-        top: init + "px",
+        top: init + "px"
       });
       $span.animate(
         {
           fontsize: 10 + "px",
           top: init - 150 + "px",
-          opacity: 0.2,
+          opacity: 0.2
         },
         1000,
         function () {
@@ -521,23 +516,23 @@
       $(".头像").mouseenter(function () {
         $(".头像")
           .css({
-            transform: "rotate(45deg)",
+            transform: "rotate(45deg)"
           })
           .mouseleave(function () {
             $(".头像").css({
-              transform: "rotate(-45deg)",
+              transform: "rotate(-45deg)"
             });
             setTimeout(function () {
               $(".头像").css({
-                transform: "rotate(20deg)",
+                transform: "rotate(20deg)"
               });
               setTimeout(function () {
                 $(".头像").css({
-                  transform: "rotate(-10deg)",
+                  transform: "rotate(-10deg)"
                 });
                 setTimeout(function () {
                   $(".头像").css({
-                    transform: "rotate(0deg)",
+                    transform: "rotate(0deg)"
                   });
                 }, 500);
               }, 500);
@@ -556,6 +551,7 @@
       $(".xs_li_5").xs999(5);
       $(".xs_li_6").xs999(6);
       $(".xs_li_7").xs999(7);
+      $(".xs_li_8").xs999(9);
     });
   </script>
 </html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>遂沫的小窝</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script src="./xs.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      @font-face {
+        font-family: StarRail;
+        src: url("./font/zh-cn.ttf");
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: StarRail;
+      }
+
+      body {
+        width: 1vw;
+        height: 1vh;
+        background: gainsboro;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      hr {
+        height: 1px;
+        background-color: pink;
+        border: none;
+      }
+
+      .鼠标特效 {
+        position: absolute;
+        user-select: none;
+        font-size: 20px;
+      }
+
+      .中间区域 {
+        width: 400px;
+        height: 600px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff79;
+        padding: 15px;
+        box-shadow: rgba(112, 82, 82, 0.459) 15px 15px 5px 5px;
+      }
+
+      .昵称_头像_简介 {
+        width: 400px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .头像 {
+        width: 100px;
+        height: 100px;
+        border: pink solid 2px;
+        border-radius: 50%;
+        transition: all 500ms ease-in-out;
+      }
+
+      .昵称 {
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .简介 {
+        font-weight: bold;
+      }
+
+      .社交列表 {
+        margin-top: 15px;
+        width: 400px;
+      }
+
+      .社交列表 > ul > li {
+        list-style: none;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-color: #ffffff44;
+      }
+
+      .社交列表 > ul > li:hover {
+        background-color: #ffffff;
+        transition: all 500ms ease-in-out;
+      }
+
+      .社交列表 > ul > li > a {
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 40px;
+        line-height: 40px;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: flex-start;
+        color: black;
+        text-decoration: none;
+      }
+
+      .社交列表 > ul > li > a > i {
+        font-size: 25px;
+        vertical-align: middle;
+        line-height: 40px;
+        margin-right: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="中间区域">
+      <div class="昵称_头像_简介">
+        <img
+          class="头像"
+          src="https://avatars.githubusercontent.com/u/102911714?v=4"
+          alt="github头像"
+        />
+        <div style="margin-left: 15px">
+          <p class="昵称">遂沫</p>
+          <hr />
+          <p class="简介">这里是遂沫的小窝</p>
+        </div>
+      </div>
+      <hr />
+      <div class="社交列表">
+        <ul>
+          <li class="xs_li_1">
+            <a href="https://issuimoo.com/" target="_blank">
+              <i class="fa-solid fa-globe"></i>
+              <p>Blog</p>
+            </a>
+          </li>
+          <li class="xs_li_2">
+            <a href="https://space.bilibili.com/319091647/" target="_blank">
+              <i class="fa-brands fa-bilibili"></i>
+              <p>BiliBili</p>
+            </a>
+          </li>
+          <li class="xs_li_3">
+            <a href="https://twitter.com/suimo11900032/" target="_blank">
+              <i class="fa-brands fa-twitter"></i>
+              <p>Twitter</p>
+            </a>
+          </li>
+          <li class="xs_li_4">
+            <a href="https://t.me/ISSUIMO/" target="_blank">
+              <i class="fa-brands fa-telegram"></i>
+              <p>Telegram</p>
+            </a>
+          </li>
+          <li class="xs_li_5">
+            <a href="https://github.com/issuimo/" target="_blank">
+              <i class="fa-brands fa-github"></i>
+              <p>Github</p>
+            </a>
+          </li>
+          <li class="xs_li_6">
+            <a href="https://steamcommunity.com/id/-suimo-/" target="_blank">
+              <i class="fa-brands fa-steam"></i>
+              <p>Steam</p>
+            </a>
+          </li>
+          <li class="xs_li_7">
+            <a href="mailto:<1992724048@qq.com>">
+              <i class="fa-solid fa-envelope"></i>
+              <p>Mail</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script>
+    // 点击特效
+    var fontAll = ["喵~", "杂鱼❤️喵~"];
+    var colorAll = [
+      "red",
+      "pink",
+      "yellow",
+      "blue",
+      "aqua",
+      "green",
+      "gold",
+      "brown",
+      "grey",
+      "orange",
+    ];
+
+    $(document).click(function (e) {
+      var $span = $(
+        "<span class='鼠标特效'>" +
+          fontAll[Math.floor(Math.random() * fontAll.length)] +
+          "</span>"
+      );
+      $("body").append($span);
+      $span.css("color", colorAll[Math.floor(Math.random() * colorAll.length)]);
+      var width = $span.width();
+      var height = $span.height();
+      var init = e.pageY - height / 2;
+      $span.css({
+        left: e.pageX - width / 2 + "px",
+        top: init + "px",
+      });
+      $span.animate(
+        {
+          fontsize: 10 + "px",
+          top: init - 150 + "px",
+          opacity: 0.2,
+        },
+        1000,
+        function () {
+          $span.css("display", "none");
+        }
+      );
+    });
+  </script>
+  <script>
+    // 头像动作
+    $(function () {
+      $(".头像").mouseenter(function () {
+        $(".头像")
+          .css({
+            transform: "rotate(45deg)",
+          })
+          .mouseleave(function () {
+            $(".头像").css({
+              transform: "rotate(-45deg)",
+            });
+            setTimeout(function () {
+              $(".头像").css({
+                transform: "rotate(20deg)",
+              });
+              setTimeout(function () {
+                $(".头像").css({
+                  transform: "rotate(-10deg)",
+                });
+                setTimeout(function () {
+                  $(".头像").css({
+                    transform: "rotate(0deg)",
+                  });
+                }, 500);
+              }, 500);
+            }, 500);
+          });
+      });
+    });
+  </script>
+  <script>
+    // 按钮特效
+    $(function () {
+      $(".xs_li_1").xs999(1);
+      $(".xs_li_2").xs999(2);
+      $(".xs_li_3").xs999(23);
+      $(".xs_li_4").xs999(4);
+      $(".xs_li_5").xs999(5);
+      $(".xs_li_6").xs999(6);
+      $(".xs_li_7").xs999(7);
+    });
+  </script>
+</html>

@@ -38,6 +38,7 @@
       }
 
       .中间区域 {
+        user-select: none;
         width: 400px;
         height: 640px;
         position: absolute;
@@ -47,9 +48,11 @@
         background-color: #ffffff79;
         padding: 15px;
         box-shadow: rgba(112, 82, 82, 0.459) 15px 15px 5px 5px;
+        border-radius: 15px !important;
       }
 
       .中间区域_移动端 {
+        user-select: none;
         width: 1vw;
         height: 1vh;
         background-color: #ffe4e48c;
@@ -64,6 +67,7 @@
         margin-bottom: 15px;
         background-color: #ffffff2a;
         padding: 10px;
+        border-radius: 15px !important;
       }
 
       .头像 {
@@ -93,6 +97,7 @@
         margin-top: 5px;
         margin-bottom: 5px;
         background-color: #ffffff8a;
+        border-radius: 10px !important;
       }
 
       .社交列表 > ul > li:hover {
@@ -161,7 +166,17 @@
           </li>
           <li class="xs_li_6">
             <a href="#" target="_blank">
-              <p>赛马娘 (不常玩): B服</p>
+              <p>赛马娘: B服 | 不常玩</p>
+            </a>
+          </li>
+          <li class="xs_li_7">
+            <a href="#" target="_blank">
+              <p>崩坏3: 官服 | 手残不常玩</p>
+            </a>
+          </li>
+          <li class="xs_li_8">
+            <a href="#" target="_blank">
+              <p>少前2: 官服 | 优化差不常玩</p>
             </a>
           </li>
         </ul>
@@ -171,6 +186,8 @@
   <script>
     // 屏幕适配
     $(function () {
+      $(".社交列表").slideUp(1).slideDown(1000);
+
       if ($(window).width() < 450) {
         $(".中间区域").addClass("中间区域_移动端").removeClass("中间区域");
         $(".中间区域_移动端").css("width", $(window).width() - 30);

@@ -54,6 +54,7 @@
       }
 
       .中间区域 {
+        user-select: none;
         width: 400px;
         height: 640px;
         position: absolute;
@@ -63,9 +64,11 @@
         background-color: #ffffff79;
         padding: 15px;
         box-shadow: rgba(112, 82, 82, 0.459) 15px 15px 5px 5px;
+        border-radius: 15px !important;
       }
 
       .中间区域_移动端 {
+        user-select: none;
         width: 1vw;
         height: 1vh;
         background-color: #ffe4e48c;
@@ -80,6 +83,7 @@
         margin-bottom: 15px;
         background-color: #ffffff2a;
         padding: 10px;
+        border-radius: 15px !important;
       }
 
       .头像 {
@@ -109,6 +113,7 @@
         margin-top: 5px;
         margin-bottom: 5px;
         background-color: #ffffff8a;
+        border-radius: 10px !important;
       }
 
       .社交列表 > ul > li:hover {
@@ -184,7 +189,7 @@
           <li class="xs_li_5">
             <a href="https://github.com/issuimo/" target="_blank">
               <i class="fa-brands fa-github"></i>
-              <p>Github</p>
+              <p>GitHub</p>
             </a>
           </li>
           <li class="xs_li_6">
@@ -572,6 +577,9 @@
             }, 500);
           });
       });
+
+      $(".头像").mouseenter().mouseleave();
+      $(".社交列表").slideUp(1).slideDown(1000);
     });
   </script>
   <script>

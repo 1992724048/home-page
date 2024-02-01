@@ -549,14 +549,21 @@
     });
   </script>
   <script>
+    var mouseenterValue = false;
+
     // 头像动作
     $(function () {
-      $(".头像").mouseenter(function () {
-        $(".头像")
-          .css({
-            transform: "rotate(45deg)"
-          })
-          .mouseleave(function () {
+      $(".头像")
+        .mouseenter(function () {
+          if (!mouseenterValue) {
+            $(".头像").css({
+              transform: "rotate(45deg)"
+            });
+          }
+        })
+        .mouseleave(function () {
+          if (!mouseenterValue) {
+            mouseenterValue = true;
             $(".头像").css({
               transform: "rotate(-45deg)"
             });
@@ -572,11 +579,12 @@
                   $(".头像").css({
                     transform: "rotate(0deg)"
                   });
+                  mouseenterValue = false;
                 }, 500);
               }, 500);
             }, 500);
-          });
-      });
+          }
+        });
 
       $(".头像").mouseenter().mouseleave();
       $(".社交列表").slideUp(1).slideDown(1000);

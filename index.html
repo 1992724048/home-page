@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人主页 - 遂沫</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="https://kit.fontawesome.com/a3c2e1bb47.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/102911714?v=4">
+</head>
+<body>
+    <div class="white card_pc">
+        <img class="card_pc_image" src="res/card.jpg" alt="">
+        <div class="card_pc_desc">
+            <h1 id='title' class="card_title">&nbsp;遂沫 - 个人主页</h1>
+            <div id="title_line" class="card_title_line"></div>
+
+            <div id="desc_text" class="text_div">
+                <p class="card_text">Hi~ o(*￣▽￣*)ブ 你好啊! 我是 遂沫 欢迎来到我的个人主页, 你可以从下方链接中访问更多网页</p>
+                <del class="del">可爱男娘/药娘加我, 来点小男孩也可以, 嘿嘿^-^（</del>
+                <p class="card_text">日常不活跃, 博客半年一更, 有事请用邮件通知我(～￣▽￣)～</p>
+                <p class="card_text tips">下方<i class="fa-solid fa-message"></i>样图标是留言板, 尝试点点<i class="fa-solid fa-question"></i>和<i class="fa-solid fa-arrow-left"></i>图标看, 也许能发生惊喜哦!</p>
+
+            </div>
+
+            <ul class="card_link_button_list">
+                <li class=" button1">
+                    <a href="https://issuimoo.com/" target="_blank"><i class="fa-solid fa-mug-hot"></i>&nbsp;&nbsp;&nbsp;博客</a>
+                </li>
+                <li class="button2">
+                    <a href="http://101.132.174.231/"><i class="fa-solid fa-server"></i>&nbsp;&nbsp;&nbsp;服务器</a>
+                </li>
+                <li class="button3">
+                    <a href="mailto:a1992724048@outlook.com"><i class="fa-solid fa-at"></i>&nbsp;&nbsp;&nbsp;邮件</a>
+                </li>
+            </ul>
+
+            <ul class="card_link_list">
+                <li><a href="https://space.bilibili.com/319091647/" target="_blank"><i class="fa-brands fa-bilibili"></i></a></li>
+                <li><a href="https://github.com/issuimo/" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://t.me/ISSUIMO/" target="_blank"><i class="fa-brands fa-telegram"></i></a></li>
+                <li><a href="https://twitter.com/suimo11900032/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="https://遂沫.com/img/IMG_0767(20240131-202938).JPG" target="_blank"><i class="fa-brands fa-qq"></i></a></li>
+                <li><a href="https://遂沫.com/img/IMG_0765(20240131-191808).JPG" target="_blank"><i class="fa-brands fa-weixin"></i></a></li>
+                <li><a href="https://steamcommunity.com/id/-suimo-/" target="_blank"><i class="fa-brands fa-steam"></i></a></li>
+                <li><a href="https://waline.issuimoo.com/" target="_blank"><i class="fa-solid fa-message"></i></a></li>
+                <li><a href="https://ys.mihoyo.com/pre-register/#/" target="_blank"><i class="fa-solid fa-question"></i></a></li>
+                <li><a href="https://www.bilibili.com/bangumi/play/ep341208?spm_id_from=333.1007.top_right_bar_window_history.content.click&from_spmid=666.25.episode.0" target="_blank"><i class="fa-solid fa-question"></i></a></li>
+                <li><a href="https://ak.hypergryph.com/#index" target="_blank"><i class="fa-solid fa-arrow-left"></i></a></li>
+            </ul>
+
+            <div>
+                <p class="text">Mod by 遂沫</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    if ($(window).width() < 1000) {
+        let card_div = $("body>div")
+        card_div.removeClass('card_pc')
+        card_div.addClass('card_phone')
+        let body = $("body");
+        body.css('background-color', "white")
+        body.css('align-items', "start")
+        let card_img = $("body>div>img")
+        card_img.css('width', '100vw')
+        card_img.css('height', '40vh')
+        $("body>div>div>.text_div").css('height', 'auto')
+        let button = $("body>div>div>.card_link_button_list>li")
+        button.css('width', '100px')
+        $("body>div>div>.card_link_list>li").css('padding', '10px')
+    } else {
+
+    }
+</script>
+<style>
+    @font-face {
+        font-family: SDK_SC_Web;
+        src: url("res/zh-cn.ttf");
+    }
+
+    * {
+        font-family: SDK_SC_Web, serif;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    body {
+        /*background: url("res/bgc.jpg") fixed;*/
+        background-color: rgba(235, 235, 235, 0.53);
+
+        background-size: cover;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .del {
+         color: rgba(128, 128, 128, 0.5);
+     }
+
+    .tips {
+        line-height: 25px;
+        width: fit-content;
+        padding-right: 5px;
+        color: rgba(128, 128, 128, 1);
+        background-color: rgba(236, 236, 236, 1);
+        border-radius: 180px;
+    }
+
+    .tips:before {
+        display: inline-block;
+        content: 'i';
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        background-color: rgba(235, 206, 216, 1);
+        border-radius: 180px;
+        margin-right: 5px;
+    }
+
+    .table tr {
+        border-bottom-color: #ebced8;
+        border-bottom-width: 2px;
+    }
+
+    .table tr td {
+        width: 200px;
+    }
+
+    .card_pc {
+        box-shadow: 0 0 20px 10px rgba(231, 234, 239, 0.5);
+        width: 980px;
+        height: 500px;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        background-color: white;
+    }
+
+    .card_pc_image {
+        width: 300px;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .card_pc_desc {
+        padding: 35px 25px 25px;
+    }
+
+    .card_title {
+        /*  保留  */
+    }
+
+    .card_title_line {
+        background-color: #ebced8;
+        height: 3px;
+        width: 100px;
+        margin-bottom: 10px;
+    }
+
+    .card_text {
+        font-size: 16px;
+        color: gray;
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+        unicode-bidi: isolate;
+    }
+
+    .text_div {
+        padding-right: 15px;
+        height: 285px;
+        overflow-y: hidden;
+        margin-bottom: 10px;
+    }
+
+    .text_div:hover {
+        padding-right: 0;
+        overflow-y: scroll;
+    }
+
+    .text {
+        color: gray;
+        font-size: 12px;
+    }
+
+    .card_link_button_list {
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-start
+    }
+
+    .card_link_button_list>li {
+        width: 206px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: #ebced8;
+    }
+
+    .card_link_button_list>li>a {
+        display: inline-block;
+        border: none;
+        color: white;
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+        text-align: center;
+        line-height: 50px;
+        text-decoration: none;
+    }
+
+    .card_link_list {
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 5px;
+    }
+
+    .card_link_list>li {
+        display: block;
+        font-size: 25px;
+        margin-top: 5px;
+        margin-right: 10px;
+    }
+
+    .card_link_list>li>a {
+        color: #ebced8;
+    }
+
+    .button1 {
+        background-color: #ebced8;
+    }
+
+    .button1:hover {
+        background-color: #c7afb7;
+    }
+
+    .button1:active {
+        z-index: 999;
+        box-shadow: 0 0 0 3px rgba(235, 206, 216, 0.5);
+    }
+
+    .button2 {
+        margin-left: 5px;
+        margin-right: 5px;
+        background-color: #ebced8;
+    }
+
+    .button2:hover {
+        background-color: #c7afb7;
+    }
+
+    .button2:active {
+        z-index: 999;
+        box-shadow: 0 0 0 3px rgba(235, 206, 216, 0.5);
+    }
+
+    .button3 {
+        background-color: #ebced8;
+    }
+
+    .button3:hover {
+        background-color: #c7afb7;
+    }
+
+    .button3:active {
+        z-index: 999;
+        box-shadow: 0 0 0 3px rgba(235, 206, 216, 0.5);
+    }
+
+    .card_phone {
+        width: 100vw;
+        height: auto;
+        display: grid;
+    }
+</style>
+</html>
